@@ -29,20 +29,17 @@
 		<img id="image" src="" alt="Image de profil">
 	</div>
 
-	<script>
-		// Extraire les paramètres GET de l'URL
-		const urlParams = new URLSearchParams(window.location.search);
-		const nom = urlParams.get('nom');
-		const email = urlParams.get('email');
-		const adresse = urlParams.get('adresse');
-		const image = urlParams.get('image');
-	  
-		// Mettre à jour les éléments HTML avec les données de l'utilisateur
-		document.getElementById('nom').textContent = nom;
-		document.getElementById('email').textContent = email;
-		document.getElementById('adresse').textContent = adresse;
-		document.getElementById('image').src = 'C:/imagepi/' + image;
-	  </script>
+<script>
+    // Récupérer les paramètres de l'URL
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // Mettre à jour les éléments HTML avec les données du user
+    document.getElementById('nom').textContent = urlParams.get('nom');
+    document.getElementById('email').textContent = urlParams.get('email');
+    document.getElementById('adresse').textContent = urlParams.get('adresse');
+    document.getElementById('image').src = 'C:/imagepi/' + urlParams.get('image');
+</script>
+
 	  
 </body>
 </html>
