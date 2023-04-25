@@ -30,17 +30,19 @@
 	</div>
 
 	<script>
-		// Récupérer les données du user à partir de l'objet Java loggedInUser
-		var nom = '<%= loggedInUser.getNom() %>';
-		var email = '<%= loggedInUser.getEmail() %>';
-		var adresse = '<%= loggedInUser.getPrenom() %>';
-		var image = '<%= loggedInUser.getImage() %>';
-
-		// Mettre à jour les éléments HTML avec les données du user
+		// Extraire les paramètres GET de l'URL
+		const urlParams = new URLSearchParams(window.location.search);
+		const nom = urlParams.get('nom');
+		const email = urlParams.get('email');
+		const adresse = urlParams.get('adresse');
+		const image = urlParams.get('image');
+	  
+		// Mettre à jour les éléments HTML avec les données de l'utilisateur
 		document.getElementById('nom').textContent = nom;
 		document.getElementById('email').textContent = email;
 		document.getElementById('adresse').textContent = adresse;
 		document.getElementById('image').src = 'C:/imagepi/' + image;
-	</script>
+	  </script>
+	  
 </body>
 </html>
