@@ -5,18 +5,26 @@
 	<style>
 		body {
 			font-family: Arial, sans-serif;
-			background-color: #f2f2f2;
+			background: linear-gradient(to bottom right, #87CEFA, #ADD8E6);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
 		}
 		h1 {
 			font-size: 24px;
 			color: #333;
+			margin-bottom: 20px;
 		}
 		.container {
 			max-width: 800px;
-			margin: 0 auto;
 			padding: 20px;
 			background-color: #fff;
 			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+			text-align: center;
+		}
+		p {
+			margin-bottom: 10px;
 		}
 	</style>
 </head>
@@ -26,19 +34,18 @@
 		<p><strong>Nom:</strong> <span id="nom"></span></p>
 		<p><strong>Email:</strong> <span id="email"></span></p>
 		<p><strong>Adresse:</strong> <span id="adresse"></span></p>
-		
 	</div>
 
-<script>
-// Récupérer les paramètres de l'URL
-    const urlParams = new URLSearchParams(window.location.search);
+	<script>
+		// Récupérer les paramètres de l'URL
+	    const urlParams = new URLSearchParams(window.location.search);
 
-    // Mettre à jour les éléments HTML avec les données du user
-    document.getElementById('nom').textContent = urlParams.get('nom');
-    document.getElementById('email').textContent = urlParams.get('email');
-    document.getElementById('adresse').textContent = urlParams.get('adresse');
-</script>
-
+	    // Mettre à jour les éléments HTML avec les données du user
+	    document.getElementById('nom').textContent = urlParams.get('nom');
+	    document.getElementById('email').textContent = urlParams.get('email');
+	    document.getElementById('adresse').textContent = urlParams.get('adresse');
+	</script>
 	  
 </body>
 </html>
+
