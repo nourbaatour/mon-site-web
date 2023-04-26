@@ -30,13 +30,25 @@
 	</div>
 
 <script>
-  const urlParams = new URLSearchParams(window.location.search);
-const paramsArray = urlParams.getAll();
-document.getElementById('nom').textContent = paramsArray[0];
-document.getElementById('email').textContent = paramsArray[1];
-document.getElementById('adresse').textContent = paramsArray[2];
-document.getElementById('image').src = 'C:/imagepi/' + paramsArray[3];
+ // Récupérer les paramètres de l'URL
+		const urlParams = new URLSearchParams(window.location.search);
 
+		// Mettre à jour les éléments HTML avec les données du user
+		if (urlParams.has('nom')) {
+			document.getElementById('nom').textContent = urlParams.get('nom');
+		}
+
+		if (urlParams.has('email')) {
+			document.getElementById('email').textContent = urlParams.get('email');
+		}
+
+		if (urlParams.has('adresse')) {
+			document.getElementById('adresse').textContent = urlParams.get('adresse');
+		}
+
+		if (urlParams.has('image')) {
+			document.getElementById('image').src = 'C:/imagepi/' + urlParams.get('image');
+		}
 </script>
 
 	  
