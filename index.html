@@ -30,14 +30,13 @@
 	</div>
 
 <script>
-    // Récupérer les paramètres de l'URL
-    const urlParams = new URLSearchParams(window.location.search);
+  const urlParams = new URLSearchParams(window.location.search);
+const paramsArray = urlParams.getAll();
+document.getElementById('nom').textContent = paramsArray[0];
+document.getElementById('email').textContent = paramsArray[1];
+document.getElementById('adresse').textContent = paramsArray[2];
+document.getElementById('image').src = 'C:/imagepi/' + paramsArray[3];
 
-    // Mettre à jour les éléments HTML avec les données du user
-    document.getElementById('nom').textContent = urlParams.get('nom');
-    document.getElementById('email').textContent = urlParams.get('email');
-    document.getElementById('adresse').textContent = urlParams.get('adresse');
-    document.getElementById('image').src = 'C:/imagepi/' + urlParams.get('image');
 </script>
 
 	  
